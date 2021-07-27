@@ -43,6 +43,7 @@
 2. POST: http://localhost:5000/api/mongodb/createPersons
 
 ###### Payload:
+```json
 [
     {    
         "firstName": "Mahesh",
@@ -53,8 +54,10 @@
         "lastName": "Prasad"    
     }
 ]
+```
 
 ###### Response:
+```json
 {
     "error": false,
     "data": {
@@ -67,11 +70,13 @@
     },
     "message": "Record created successfully!"
 }
+```
 
 <br/>
 3. PUT: http://localhost:5000/api/mongodb/updatePerson
 
 ###### Payload:
+```json
 {
     "searchQuery":{
         "firstName": "Test"
@@ -81,8 +86,10 @@
         "lastName": "User12"
     }
 }
+```
 
 ###### OR
+```json
 {
     "searchQuery":{
         "_id": "60f83b42d159acb79243e005"
@@ -92,8 +99,10 @@
         "lastName": "User12"
     }
 }
+```
 
 ###### Response:
+```json
 {
     "error": false,
     "data": {
@@ -105,27 +114,33 @@
     },
     "message": "Record updated successfully!"
 }
+```
 
 <br/>
 4. DELETE: http://localhost:5000/api/mongodb/deletePerson
 
 ###### Payload:
+```json
 {
     "searchQuery":{
         "firstName": "Test"
     },
     "data":{ }
 }
+```
 
 ###### OR
+```json
 {
     "searchQuery":{
         "_id": "60f83b42d159acb79243e005"
     },
     "data":{ }
 }
+```
 
 ###### Response:
+```json
 {
     "error": false,
     "data": {
@@ -134,33 +149,41 @@
     },
     "message": "Record deleted successfully!"
 }
+```
 
 <br/>
 5. GET: http://localhost:5000/api/mongodb/getperson
 
 ###### Payload:
+```json
 {
     "searchQuery":{ },
     "options":{ }
 }
+```
 
 ###### OR
+```json
 {
     "searchQuery":{
         "_id": "60f82ab44d744915a732e0b2"
     },
     "options":{ }
 }
+```
 
 ###### OR
+```json
 {
     "searchQuery":{
         "firstName": "Amalay"
     },
     "options":{ }
 }
+```
 
 ###### OR
+```json
 {
     "searchQuery":{
         "firstName": "Amalay"
@@ -170,8 +193,10 @@
         "projection": { "_id": 0, "firstName": 1, "lastName": 1 }
     }
 }
+```
 
 ###### Response:
+```json
 {
     "error": false,
     "data": [
@@ -192,8 +217,10 @@
         }
     ]
 }
+```
 
 ###### OR
+```json
 {
     "error": false,
     "data": [
@@ -204,8 +231,10 @@
         }
     ]
 }
+```
 
 ###### OR
+```json
 {
     "error": false,
     "data": [
@@ -216,8 +245,10 @@
         }
     ]
 }
+```
 
 ###### OR
+```json
 {
     "error": false,
     "data": [
@@ -227,3 +258,4 @@
         }
     ]
 }
+```
