@@ -18,7 +18,6 @@
 
 # Sample Request and Response
 ##### 1. POST: http://localhost:5000/api/mongodb/createPerson
-
 ###### Payload:
 ```json
 {    
@@ -40,7 +39,6 @@
 ```
 
 ##### 2. POST: http://localhost:5000/api/mongodb/createPersons
-
 ###### Payload:
 ```json
 [
@@ -72,7 +70,6 @@
 ```
 
 ##### 3. PUT: http://localhost:5000/api/mongodb/updatePerson 
-
 ###### Payload:
 ```json
 {
@@ -114,9 +111,7 @@
 }
 ```
 
-<br/>
-4. DELETE: http://localhost:5000/api/mongodb/deletePerson
-
+##### 4. DELETE: http://localhost:5000/api/mongodb/deletePerson
 ###### Payload:
 ```json
 {
@@ -149,9 +144,7 @@
 }
 ```
 
-<br/>
-5. GET: http://localhost:5000/api/mongodb/getperson
-
+##### 5. GET: http://localhost:5000/api/mongodb/getperson
 ###### Payload:
 ```json
 {
