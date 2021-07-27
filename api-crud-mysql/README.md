@@ -1,16 +1,21 @@
 # CRUD Operations in NodeJS with MySql
 
-### Instruction
+## Learnig steps:
 -----------------------------------------------------------------------------------------------------
-1. Clone the project from github
-2. Install the dependent packages
-3. Set your MySql connection settings into config.js file under config folder
-4. Run npm install command on your terminal to install the required packages.
-5. Run npm start command on your terminal to start the application
-6. Open postman and execute APIs with payload mentioned as below. 
 
 
-### Packages:
+### Code setup from github
+-----------------------------------------------------------------------------------------------------
+1. Setup MYSQL Database at your local machine if not setup already.
+2. Open MYSQL shell or command prompt and run the scripts mentioned in mySqlScripts.sql file under project folder.
+3. Clone the project from github
+4. Set your MySql connection settings into config.js file under config folder
+5. Run npm install command on your terminal to install the required packages.
+6. Run npm start command on your terminal to start the application
+7. Open postman and execute APIs with payload mentioned as below. 
+
+
+### Required packages and commands to install:
 > npm install express --save-dev
 
 > npm install mysql --save-dev
