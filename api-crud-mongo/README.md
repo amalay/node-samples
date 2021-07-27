@@ -39,7 +39,6 @@
 }
 ```
 
-<br/>
 ##### POST: http://localhost:5000/api/mongodb/createPersons
 
 ###### Payload:
@@ -72,8 +71,7 @@
 }
 ```
 
-<br/>
-3. PUT: http://localhost:5000/api/mongodb/updatePerson 
+##### PUT: http://localhost:5000/api/mongodb/updatePerson 
 
 ###### Payload:
 ```json
