@@ -20,18 +20,6 @@
 1. POST: http://localhost:5000/api/mongodb/createPerson
 
 ###### Payload:
-{    
-    "firstName": "Amalay",
-    "lastName": "Verma"    
-}
-
-```javascript
-{    
-    "firstName": "Amalay",
-    "lastName": "Verma"    
-}
-```
-
 ```json
 {    
     "firstName": "Amalay",
@@ -40,6 +28,7 @@
 ```
 
 ###### Response:
+```json
 {
     "error": false,
     "data": {
@@ -48,6 +37,7 @@
     },
     "message": "Record created successfully!"
 }
+```
 
 <br/>
 2. POST: http://localhost:5000/api/mongodb/createPersons
