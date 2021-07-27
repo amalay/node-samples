@@ -1,11 +1,11 @@
 # CRUD Operations in NodeJS with MySql
-
+<br/>
 ## Learnig steps:
------------------------------------------------------------------------------------------------------
-
+<br/>
+<br/>
 
 ### Code setup from github
------------------------------------------------------------------------------------------------------
+
 1. Setup MYSQL Database at your local machine if not setup already.
 2. Open MYSQL shell or command prompt and run the scripts mentioned in mySqlScripts.sql file under project folder.
 3. Clone the project from github
