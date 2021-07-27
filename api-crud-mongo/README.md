@@ -203,6 +203,7 @@
 ```
 
 ###### OR
+###### Payload:
 ```json
 {
     "searchQuery":{
@@ -212,7 +213,22 @@
 }
 ```
 
+###### Response:
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "_id": "60f7fdfd0cdca5dffb60a679",
+            "firstName": "Amalay",
+            "lastName": "Verma"
+        }
+    ]
+}
+```
+
 ###### OR
+###### Payload:
 ```json
 {
     "searchQuery":{
@@ -226,58 +242,6 @@
 ```
 
 ###### Response:
-```json
-{
-    "error": false,
-    "data": [
-        {
-            "_id": "60f7fdfd0cdca5dffb60a679",
-            "firstName": "Amalay",
-            "lastName": "Verma"
-        },
-        {
-            "_id": "60f7fe520cdca5dffb60a67a",
-            "firstName": "Mahesh",
-            "lastName": "Marthi"
-        },
-        {
-            "_id": "60f7fe520cdca5dffb60a67b",
-            "firstName": "Rakesh",
-            "lastName": "Prasad"
-        }
-    ]
-}
-```
-
-###### OR
-```json
-{
-    "error": false,
-    "data": [
-        {
-            "_id": "60f82ab44d744915a732e0b2",
-            "firstName": "Samik",
-            "lastName": "Roy"
-        }
-    ]
-}
-```
-
-###### OR
-```json
-{
-    "error": false,
-    "data": [
-        {
-            "_id": "60f7fdfd0cdca5dffb60a679",
-            "firstName": "Amalay",
-            "lastName": "Verma"
-        }
-    ]
-}
-```
-
-###### OR
 ```json
 {
     "error": false,
