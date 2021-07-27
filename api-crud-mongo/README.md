@@ -25,6 +25,20 @@
     "lastName": "Verma"    
 }
 
+```javascript
+{    
+    "firstName": "Amalay",
+    "lastName": "Verma"    
+}
+```
+
+```json
+{    
+    "firstName": "Amalay",
+    "lastName": "Verma"    
+}
+```
+
 ###### Response:
 {
     "error": false,
