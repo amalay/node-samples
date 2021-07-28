@@ -38,9 +38,9 @@ CREATE TABLE `user` (
 
 --==================================================================================
 LOCK TABLES `user` WRITE;
-INSERT INTO `user` VALUES 
-(1, 'admin', '$2a$08$UTr5G3B.3iGfwodXyU2RIeCH69xbHCKBnWOk38V6lHq5dh8Wo83Mm', 'Test', 'Admin', 'admin@abc.com', 1),
-(2, 'user', '$2a$08$wRd3TZBfe9KctXm8GVk8JOZ3Rn1XY/.1c42UiFCvO.AtXFGO.nCNS', 'Test', 'User', 'user@abc.com', 2);
+INSERT INTO `user` (Id, UserName, Password, FirstName, LastName, Email, RoleId, IsActive) VALUES 
+(1, 'admin', '$2a$08$UTr5G3B.3iGfwodXyU2RIeCH69xbHCKBnWOk38V6lHq5dh8Wo83Mm', 'Test', 'Admin', 'admin@abc.com', 1, 1),
+(2, 'user', '$2a$08$wRd3TZBfe9KctXm8GVk8JOZ3Rn1XY/.1c42UiFCvO.AtXFGO.nCNS', 'Test', 'User', 'user@abc.com', 2, 1);
 UNLOCK TABLES;
 
 --================================================================================
