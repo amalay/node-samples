@@ -14,7 +14,7 @@
 7. Open postman and execute APIs with payload mentioned as below. 
 
 
-### Required packages and commands to install:
+### Required packages and commands to install
 > npm install express --save-dev
 
 > npm install mysql --save-dev
