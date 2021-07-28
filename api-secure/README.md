@@ -30,7 +30,7 @@
 ### Sample Request and Response
 #### A. SignIn API to get Access token
 ##### 1. POST: http://localhost:5000/api/auth/signIn
-This is the signIn api and will be accessed by any user to get Access token!
+This is the SIGNIN API and will be accessed by any user to get Access token!
 ###### Payload: Invalid UserName in payload
 ```json
 {
@@ -132,7 +132,7 @@ Not Required
 
 #### B. Authentication & Authorization APIs
 ##### 1. GET: http://localhost:5000/api/auth/default
-This is the default api and will be accessed by any user. Authentication/Authorization or Access token is not required to access this api!
+This is the DEFAULT API and will be accessed by any user. Authentication/Authorization or Access token is not required to access this api!
 ###### Payload:
 ```json
 Not Required
@@ -152,7 +152,7 @@ Not Required
 ```
 
 ##### 2. GET: http://localhost:5000/api/auth/user
-This is the user dashboard api and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
+This is the USER DASHBOARD API and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
 ###### Payload: Without Access token in request header
 ```json
 Not Required
@@ -191,7 +191,7 @@ Not Required
 ```
 
 ##### 3. GET: http://localhost:5000/api/auth/admin
-This is the admin dashboard api and will be accessed by only authenticated user having Admin role. Authentication/Authorization and Access token are required to access this api!
+This is the ADMIN DASHBOARD API and will be accessed by only authenticated user having Admin role. Authentication/Authorization and Access token are required to access this api!
 ###### Payload: With User Access token in request header
 ```json
 Not Required
@@ -231,7 +231,7 @@ Not Required
 
 #### C. User APIs
 ##### 1. POST: http://localhost:5000/api/user
-This is the User API and will be accessed by only authenticated user having Admin role. Authentication/Authorization and Access token are required to access this api!
+This is the CREATE USER API and will be accessed by only authenticated user having Admin role. Authentication/Authorization and Access token are required to access this api!
 ###### Payload: Without Access token in request header
 ```json
 {
@@ -308,7 +308,7 @@ Required but not passing.
 ```
 
 ##### 2. PUT: http://localhost:5000/api/user/44
-This is the User API and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
+This is the UPDATE USER API and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
 ###### Payload: Without Access token in request header
 ```json
 {    
@@ -374,5 +374,192 @@ Required but not passing.
 {
     "error": false,
     "message": "Record updated successfully!"
+}
+```
+
+##### 3. DELETE: http://localhost:5000/api/user/44
+This is the DELETE USER API and will be accessed by only authenticated user having Admin role. Authentication/Authorization and Access token are required to access this api!
+###### Payload: Without Access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+Required but not passing.
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "No access token available!"
+}
+```
+
+###### OR
+###### Payload: With User Access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "You are not having admin priviledge to perform this action!"
+}
+```
+
+###### OR
+###### Payload: With Admin Access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI3NDYwNjM2LCJleHAiOjE2Mjc1NDcwMzZ9.1ODpKZlgbyvnRmVXECJC_VVmZ_adoKNa0txwSIh8O9Q"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "Record deleted successfully!"
+}
+```
+
+##### 4. GET: http://localhost:5000/api/user/2
+This is the GET USER API and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
+###### Payload: Without Access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+Required but not passing.
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "No access token available!"
+}
+```
+
+###### OR
+###### Payload: With User or Admin Access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "Id": 2,
+            "UserName": "user",
+            "Password": "$2a$08$wRd3TZBfe9KctXm8GVk8JOZ3Rn1XY/.1c42UiFCvO.AtXFGO.nCNS",
+            "FirstName": "Test",
+            "LastName": "User",
+            "Email": "user@abc.com",
+            "RoleId": 2,
+            "IsActive": 0
+        }
+    ]
+}
+```
+
+##### 5. GET: http://localhost:5000/api/user
+This is the GET USERS API and will be accessed by only authenticated user having admin role. Authentication/Authorization and Access token are required to access this api!
+###### Payload: Without Access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+Required but not passing.
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "No access token available!"
+}
+```
+
+###### OR
+###### Payload: With User access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "You are not having admin priviledge to perform this action!"
+}
+```
+
+###### OR
+###### Payload: With Admin access token in request header
+```json
+Not required.
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI3NDYwNjM2LCJleHAiOjE2Mjc1NDcwMzZ9.1ODpKZlgbyvnRmVXECJC_VVmZ_adoKNa0txwSIh8O9Q"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "data": [
+        {
+            "Id": 1,
+            "UserName": "admin",
+            "Password": "$2a$08$UTr5G3B.3iGfwodXyU2RIeCH69xbHCKBnWOk38V6lHq5dh8Wo83Mm",
+            "FirstName": "Test",
+            "LastName": "Admin",
+            "Email": "admin@abc.com",
+            "RoleId": 1,
+            "IsActive": 0
+        },
+        {
+            "Id": 2,
+            "UserName": "user",
+            "Password": "$2a$08$wRd3TZBfe9KctXm8GVk8JOZ3Rn1XY/.1c42UiFCvO.AtXFGO.nCNS",
+            "FirstName": "Test",
+            "LastName": "User",
+            "Email": "user@abc.com",
+            "RoleId": 2,
+            "IsActive": 0
+        }
+    ]
 }
 ```
