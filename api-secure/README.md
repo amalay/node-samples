@@ -29,8 +29,8 @@
 
 ### Sample Request and Response
 #### Authentication & Authorization Demo
-##### 1. GET: http://localhost:5000/api/auth/deafult
-This is the default api and will be accessed by any user. No authentication/authorization, token required!
+##### 1. GET: http://localhost:5000/api/auth/default
+This is the default api and will be accessed by any user. No authentication/authorization or token is required!
 ###### Payload:
 ```json
 Not Required
@@ -45,6 +45,6 @@ Not Required
 ```json
 {
     "error": false,
-    "message": "Default page! It is accessible by all the users."
+    "message": "Default page! It is accessible by all users."
 }
 ```

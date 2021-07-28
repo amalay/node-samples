@@ -59,7 +59,7 @@ exports.signOut = (request, response) => {
 
 //Demo
 exports.default = (request, response) => {    
-    response.status(200).send({error: false, message: "Default page! It is accessible by all the users."});
+    response.status(200).send({error: false, message: "Default page! It is accessible by all users."});
 };
   
 exports.userDashboard = (request, response) => {
