@@ -228,3 +228,151 @@ Not Required
     "message": "Admin Dashboard page! It is accessible only by authenticated users who has Admin role."
 }
 ```
+
+#### C. User APIs
+##### 1. POST: http://localhost:5000/api/user
+This is the User API and will be accessed by only authenticated user having Admin role. Authentication/Authorization and Access token are required to access this api!
+###### Payload: Without Access token in request header
+```json
+{
+    "UserName": "test",
+    "Password": "test",
+    "FirstName": "test",
+    "LastName": "test",
+    "Email": "test@abc.com"
+}
+```
+
+###### Authentication Header:
+```json
+Required but not passing.
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "No access token available!"
+}
+```
+
+###### OR
+###### Payload: With User Access token in request header
+```json
+{
+    "UserName": "test",
+    "Password": "test",
+    "FirstName": "test",
+    "LastName": "test",
+    "Email": "test@abc.com"
+}
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "You are not having admin priviledge to perform this action!"
+}
+```
+
+###### OR
+###### Payload: With Admin Access token in request header
+```json
+{
+    "UserName": "test",
+    "Password": "test",
+    "FirstName": "test",
+    "LastName": "test",
+    "Email": "test@abc.com"
+}
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI3NDYwNjM2LCJleHAiOjE2Mjc1NDcwMzZ9.1ODpKZlgbyvnRmVXECJC_VVmZ_adoKNa0txwSIh8O9Q"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "Record created successfully!",
+    "data": 44
+}
+```
+
+##### 2. PUT: http://localhost:5000/api/user/44
+This is the User API and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
+###### Payload: Without Access token in request header
+```json
+{    
+    "FirstName": "test12",
+    "LastName": "test12",
+    "Email": "test12@abc.com"
+}
+```
+
+###### Authentication Header:
+```json
+Required but not passing.
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "No access token available!"
+}
+```
+
+###### OR
+###### Payload: With User Access token in request header
+```json
+{    
+    "FirstName": "test12",
+    "LastName": "test12",
+    "Email": "test12@abc.com"
+}
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "Record updated successfully!"
+}
+```
+
+###### OR
+###### Payload: With Admin Access token in request header
+```json
+{    
+    "FirstName": "test1234",
+    "LastName": "test1234",
+    "Email": "test1234@abc.com"
+}
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI3NDYwNjM2LCJleHAiOjE2Mjc1NDcwMzZ9.1ODpKZlgbyvnRmVXECJC_VVmZ_adoKNa0txwSIh8O9Q"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "Record updated successfully!"
+}
+```

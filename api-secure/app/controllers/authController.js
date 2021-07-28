@@ -76,7 +76,7 @@ exports.createUser = async (request, response) => {
         response.status(400).send({ error: true, message: 'Please provide all required fields!' });
     }
     else{        
-        var user = new User(req.body);
+        var user = new User(request.body);
         
         Service.createUser(user, (err, result) => {
             if (err){
