@@ -1,4 +1,4 @@
-# Test automation fro the APIs in NodeJS with testing framework Mocha, Chai and Supertest
+# Test automation for the APIs in NodeJS with testing framework Mocha, Chai and Supertest
 
 ## Learnig steps
 
@@ -18,14 +18,23 @@
 
 ### Required packages and commands to install
 > npm install express --save-dev
+
 > npm install mysql --save-dev
+
 > npm install nodemon --save-dev
+
 > npm install body-parser --save-dev
+
 > npm install bcryptjs
+
 > npm install jsonwebtoken
 
 > npm install --save-dev chai
+
 > npm install --save-dev chai-http 
+
 > npm install -g mocha --save-dev
+
 > npm install --save-dev supertest
+
 > npm install --save-dev should
