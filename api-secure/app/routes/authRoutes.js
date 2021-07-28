@@ -25,11 +25,4 @@ module.exports = function(app) {
 
     app.put("/api/user/activateDeactivateUser/:id", [tokenService.isValidToken, tokenService.isAdmin], authController.activateDeactivateUser);
     app.put("/api/user/changeUserPassword/:id", [tokenService.isValidToken], authController.changeUserPassword);
-
-    //Person routes
-    app.post("/api/person", [tokenService.isValidToken, tokenService.isAdmin], authController.createPerson);    
-    app.put("/api/person/:id", [tokenService.isValidToken, tokenService.isAdmin], authController.updatePerson);
-    app.delete("/api/person/:id", [tokenService.isValidToken, tokenService.isAdmin], authController.deletePerson);    
-    app.get("/api/person/:id", [tokenService.isValidToken], authController.getPerson);
-    app.get("/api/person", [tokenService.isValidToken], authController.getPersons);
 };

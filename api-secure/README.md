@@ -563,3 +563,110 @@ Not required.
     ]
 }
 ```
+
+##### 6. PUT: http://localhost:5000/api/user/activateDeactivateUser/2
+This is the ACTIVATE/DE-ACTIVATE USER API and will be accessed by only authenticated user having admin role. Authentication/Authorization and Access token are required to access this api!
+###### Payload: Without Access token in request header
+```json
+{    
+    "IsActive": 1
+}
+```
+
+###### Authentication Header:
+```json
+Required but not passing.
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "No access token available!"
+}
+```
+
+###### OR
+###### Payload: With User Access token in request header
+```json
+{    
+    "IsActive": 1
+}
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "You are not having admin priviledge to perform this action!"
+}
+```
+
+###### OR
+###### Payload: With Admin Access token in request header
+```json
+{    
+    "IsActive": 1
+}
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI3NDYwNjM2LCJleHAiOjE2Mjc1NDcwMzZ9.1ODpKZlgbyvnRmVXECJC_VVmZ_adoKNa0txwSIh8O9Q"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "User activated/de-activated successfully!"
+}
+```
+
+##### 7. PUT: http://localhost:5000/api/user/changeUserPassword/2
+This is the CHANGE USER PASSWORD API and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
+###### Payload: Without Access token in request header
+```json
+{    
+    "Password": "test"
+}
+```
+
+###### Authentication Header:
+```json
+Required but not passing.
+```
+
+###### Response:
+```json
+{
+    "error": true,
+    "message": "No access token available!"
+}
+```
+
+###### OR
+###### Payload: With User or Admin Access token in request header
+```json
+{    
+    "Password": "test"
+}
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "Password changed successfully!"
+}
+```
