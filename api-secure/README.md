@@ -28,43 +28,15 @@
 > npm install jsonwebtoken
 
 ### Sample Request and Response
-##### 1. POST: http://localhost:5000/api/auth
+#### Authentication & Authorization Demo
+##### 1. GET: http://localhost:5000/api/auth/deafult
+This is the default api and will be accessed by any user. No authentication/authorization, token required!
 ###### Payload:
 ```json
-{    
-    "FirstName": "Amalay",
-    "LastName": "Verma"    
-}
+Not Required
 ```
 
-###### Response:
-```json
-{
-    "error": false,
-    "message": "Record created successfully!",
-    "data": 2
-}
-```
-
-##### 2. PUT: http://localhost:5000/api/auth/2
-###### Payload:
-```json
-{    
-    "FirstName": "Amalay1234",
-    "LastName": "Verma1234"    
-}
-```
-
-###### Response:
-```json
-{
-    "error": false,
-    "message": "Record updated successfully!"
-}
-```
-
-##### 3. DELETE: http://localhost:5000/api/auth/2
-###### Payload:
+###### Authentication Header:
 ```json
 Not Required
 ```
@@ -73,51 +45,6 @@ Not Required
 ```json
 {
     "error": false,
-    "message": "Record deleted successfully!"
-}
-```
-
-##### 4. GET: http://localhost:5000/api/auth/2
-###### Payload:
-```json
-Not Required
-```
-
-###### Response:
-```json
-{
-    "error": false,
-    "data": [
-        {
-            "Id": 2,
-            "FirstName": "Amalay",
-            "LastName": "Verma"
-        }
-    ]
-}
-```
-
-##### 5. GET: http://localhost:5000/api/auth
-###### Payload:
-```json
-Not Required
-```
-
-###### Response:
-```json
-{
-    "error": false,
-    "data": [
-        {
-            "Id": 1,
-            "FirstName": "Amalay",
-            "LastName": "Verma"
-        },
-        {
-            "Id": 2,
-            "FirstName": "Test",
-            "LastName": "User"
-        }
-    ]
+    "message": "Default page! It is accessible by all the users."
 }
 ```

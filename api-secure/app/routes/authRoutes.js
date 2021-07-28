@@ -2,12 +2,12 @@ const authController = require("../controllers/authController");
 const tokenService = require('../services/tokenService');
 
 module.exports = function(app) {
-    app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Headers", "x-access-token, Origin, Content-Type, Accept");
+    app.use(function(request, response, next) {
+        response.header("Access-Control-Allow-Headers", "x-access-token, Origin, Content-Type, Accept");
         next();
     });
 
-    //User routes
+    //Auth routes
     app.post("/api/auth/signIn", authController.signIn);
     app.post("/api/auth/signOut", [tokenService.isValidToken], authController.signOut);
 
