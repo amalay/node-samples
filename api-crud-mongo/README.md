@@ -1,16 +1,18 @@
 
 # CRUD Operations in NodeJS with MongoDB
 
-### Instruction
+### Code setup from github
 -----------------------------------------------------------------------------------------------------
-1. Clone the project from github
-2. Install the dependent packages
-3. Set your MongoDB connection string into config.js file under config folder
-4. Run the command npm start on your terminal to start the application
-5. Open postman and execute APIs with payload mentioned as below. 
+1. Setup MongoDB using your account at https://cloud.mongodb.com if not setup already.
+2. Get your connection string.
+3. Clone the project from github.
+4. Set your MongoDB connection string into config.js file under config folder.
+5. Run npm install command on your terminal to install the required packages.
+6. Run npm start command on your terminal to start the application
+7. Open postman and execute APIs with payload mentioned as below. 
 
 
-### Packages:
+### Required packages and commands to install:
 > npm install express --save-dev
 
 > npm install mongodb --save-dev
