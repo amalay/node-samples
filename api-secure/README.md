@@ -28,10 +28,10 @@
 > npm install jsonwebtoken
 
 ### Sample Request and Response
-#### A. SignIn Api to get Access token
+#### A. SignIn API to get Access token
 ##### 1. POST: http://localhost:5000/api/auth/signIn
 This is the signIn api and will be accessed by any user to get Access token!
-###### Payload:
+###### Payload: Invalid UserName in payload
 ```json
 {
     "UserName": "test",
@@ -54,7 +54,7 @@ Not Required
 ```
 
 ###### OR
-###### Payload:
+###### Payload: Invalid Password in payload
 ```json
 {
     "UserName": "user",
@@ -77,7 +77,7 @@ Not Required
 ```
 
 ###### OR
-###### Payload:
+###### Payload: Valid UserName and Password in payload with User Role
 ```json
 {
     "UserName": "user",
@@ -104,7 +104,7 @@ Not Required
 ```
 
 ###### OR
-###### Payload:
+###### Payload: Valid UserName and Password in payload with Admin Role
 ```json
 {
     "UserName": "admin",
@@ -130,7 +130,7 @@ Not Required
 }
 ```
 
-#### B. Authentication & Authorization Demo
+#### B. Authentication & Authorization APIs
 ##### 1. GET: http://localhost:5000/api/auth/default
 This is the default api and will be accessed by any user. Authentication/Authorization or Access token is not required to access this api!
 ###### Payload:
@@ -153,7 +153,7 @@ Not Required
 
 ##### 2. GET: http://localhost:5000/api/auth/user
 This is the user dashboard api and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
-###### Payload:
+###### Payload: Without Access token in request header
 ```json
 Not Required
 ```
@@ -171,23 +171,60 @@ Required but not passing.
 }
 ```
 
-##### 2. GET: http://localhost:5000/api/auth/user
-This is the user dashboard api and will be accessed by only authenticated user. Authentication/Authorization and Access token are required to access this api!
-###### Payload:
+###### OR
+###### Payload: With User Access token in request header
 ```json
 Not Required
 ```
 
 ###### Authentication Header:
-Generate token for normal user using SignIn Api mentioned above and pass it in the request header as below:
 ```json
-"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI2MjczNDYxLCJleHAiOjE2MjYzNTk4NjF9.tbsfxdMrwn2fYAMQNDZR7eHix-vhyhdwyxII3yj20_I"
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "User Dashboard page! It is accessible by all authenticated users."
+}
+```
+
+##### 3. GET: http://localhost:5000/api/auth/admin
+This is the admin dashboard api and will be accessed by only authenticated user having Admin role. Authentication/Authorization and Access token are required to access this api!
+###### Payload: With User Access token in request header
+```json
+Not Required
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI3NDYwNTcyLCJleHAiOjE2Mjc1NDY5NzJ9.Cv98nTvJqXneedDpaFpHVUOd_bMZVMbXFinejS-dPh4"
 ```
 
 ###### Response:
 ```json
 {
     "error": true,
-    "message": "No access token available!"
+    "message": "You are not having admin priviledge to perform this action!"
+}
+```
+
+###### OR
+###### Payload: With Admin Access token in request header
+```json
+Not Required
+```
+
+###### Authentication Header:
+```json
+"x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI3NDYwNjM2LCJleHAiOjE2Mjc1NDcwMzZ9.1ODpKZlgbyvnRmVXECJC_VVmZ_adoKNa0txwSIh8O9Q"
+```
+
+###### Response:
+```json
+{
+    "error": false,
+    "message": "Admin Dashboard page! It is accessible only by authenticated users who has Admin role."
 }
 ```
