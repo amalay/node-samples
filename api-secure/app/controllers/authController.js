@@ -63,11 +63,11 @@ exports.default = (request, response) => {
 };
   
 exports.userDashboard = (request, response) => {
-    response.status(200).send("User Dashboard page! It is accessible by all authenticated users.");
+    response.status(200).send({error: false, message: "User Dashboard page! It is accessible by all authenticated users."});
 };
 
 exports.adminDashboard = (request, response) => {
-    response.status(200).send("Admin Dashboard page! It is accessible only by authenticated users who has Admin role.");
+    response.status(200).send({error: false, message: "Admin Dashboard page! It is accessible only by authenticated users who has Admin role."});
 };
 
 //User
