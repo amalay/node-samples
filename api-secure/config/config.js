@@ -1,5 +1,5 @@
 module.exports = {
-    secret: "secret-key",
+    authSecretKey: "secret-key",
     mysql:{
         host: "localhost",
         user: "user",

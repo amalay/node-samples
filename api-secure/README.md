@@ -23,6 +23,10 @@
 
 > npm install body-parser --save-dev
 
+> npm install bcryptjs
+
+> npm install jsonwebtoken
+
 ### Sample Request and Response
 ##### 1. POST: http://localhost:5000/api/auth
 ###### Payload:
