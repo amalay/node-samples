@@ -1,8 +1,9 @@
 
 # CRUD Operations in NodeJS with MongoDB
 
+## Learnig steps:
+
 ### Code setup from github
------------------------------------------------------------------------------------------------------
 1. Setup MongoDB using your account at https://cloud.mongodb.com if not setup already.
 2. Get your connection string.
 3. Clone the project from github.
