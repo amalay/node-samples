@@ -1,8 +1,7 @@
 # CRUD Operations in NodeJS with MySql
-<br/>
+
 ## Learnig steps:
-<br/>
-<br/>
+
 
 ### Code setup from github
 
