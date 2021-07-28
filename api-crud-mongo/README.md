@@ -1,7 +1,7 @@
 
 # CRUD Operations in NodeJS with MongoDB
 
-## Learnig steps:
+## Learnig steps
 
 ### Code setup from github
 1. Setup MongoDB using your account at https://cloud.mongodb.com if not setup already.
